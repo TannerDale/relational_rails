@@ -1,0 +1,8 @@
+<h1>Video Games</h1>
+
+<ul>
+<% @games.each do |game| %>
+  <li><%= game.name %>, Created at: <%= game.created_at %></li>
+<% end %>
+</ul>
+<%= link_to 'Add Game', '/video_games/new' %>

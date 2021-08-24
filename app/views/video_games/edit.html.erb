@@ -1,0 +1,11 @@
+<h1>Edit <%= @game.name %></h1>
+
+<%= form_with url: "/video_games/#{@game.id}", method: :patch, local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, value: @game.name %>
+  <%= f.label :campaign_hours %>
+  <%= f.number_field :campaign_hours, value: @game.campaign_hours %>
+  <%= f.label :multiplayer %>
+  <%= f.check_box :multiplayer, value: @game.multiplayer %>
+  <%= f.submit 'Update Game' %>
+<% end %>

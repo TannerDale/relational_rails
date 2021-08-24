@@ -12,29 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_08_23_214929) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-
-  create_table "characters", force: :cascade do |t|
-    t.bigint "video_game_id"
-    t.string "name"
-    t.integer "age"
-    t.boolean "human"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["video_game_id"], name: "index_characters_on_video_game_id"
-  end
-
-  create_table "video_games", force: :cascade do |t|
-    t.string "name"
-    t.integer "campaign_hours"
-    t.boolean "multiplayer"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-  
   create_table "books", force: :cascade do |t|
     t.bigint "library_id"
     t.string "title"
@@ -46,6 +26,16 @@ ActiveRecord::Schema.define(version: 2021_08_23_214929) do
     t.index ["library_id"], name: "index_books_on_library_id"
   end
 
+  create_table "characters", force: :cascade do |t|
+    t.bigint "video_game_id"
+    t.string "name"
+    t.integer "age"
+    t.boolean "human"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["video_game_id"], name: "index_characters_on_video_game_id"
+  end
+
   create_table "libraries", force: :cascade do |t|
     t.string "name"
     t.integer "employees"
@@ -54,7 +44,14 @@ ActiveRecord::Schema.define(version: 2021_08_23_214929) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "characters", "video_games"
-  add_foreign_key "books", "libraries"
+  create_table "video_games", force: :cascade do |t|
+    t.string "name"
+    t.integer "campaign_hours"
+    t.boolean "multiplayer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
+  add_foreign_key "books", "libraries"
+  add_foreign_key "characters", "video_games"
 end

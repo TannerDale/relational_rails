@@ -1,0 +1,11 @@
+<h1>Add Video Game</h1>
+
+<%= form_with url: '/video_games', method: :post, local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :campaign_hours %>
+  <%= f.number_field :campaign_hours %>
+  <%= f.label :multiplayer %>
+  <%= f.check_box :multiplayer %>
+  <%= f.submit 'Add Game' %>
+<% end %>

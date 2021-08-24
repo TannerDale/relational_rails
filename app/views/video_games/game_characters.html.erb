@@ -1,0 +1,18 @@
+<h1><%= @game.name %> Characters</h1>
+
+<ul>
+<% if params[:order] %>
+  <% @game.characters.order(:name).each do |character| %>
+    <li>Name: <%= character.name %></li>
+    <li>Age: <%= character.age %></li>
+    <li>Human?: <%= character.human %></li>
+  <% end %>
+<% else %>
+  <% @game.characters.each do |character| %>
+    <li>Name: <%= character.name %></li>
+    <li>Age: <%= character.age %></li>
+    <li>Human?: <%= character.human %></li>
+  <% end %>
+<% end %>
+</ul>
+<%= link_to 'Sort Alphabetically', "/video_games/#{@game.id}/characters?order=alpha" %>
