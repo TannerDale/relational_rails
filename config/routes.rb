@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   get '/characters/:id', to: 'characters#show'
   get '/video_games/:id/characters/new', to: 'characters#new'
   post '/characters', to: 'characters#create'
+
+  get '/libraries', to: 'libraries#index'
 end
