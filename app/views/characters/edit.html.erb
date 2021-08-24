@@ -1,0 +1,11 @@
+<h1>Edit <%= @character.name %></h1>
+<%= form_with url: "/characters/#{@character.id}", method: 'patch', local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, value: @character.name %>
+  <%= f.label :age %>
+  <%= f.number_field :age, value: @character.age  %>
+  <%= f.label :human %>
+  <%= f.check_box :human, value: @character.human  %>
+  <%= f.hidden_field :video_game_id, value: @character.video_game_id %>
+  <%= f.submit 'Update Character' %>
+<% end %>

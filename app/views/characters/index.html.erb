@@ -1,0 +1,10 @@
+<h1>Characters</h1>
+
+<ul>
+<% @characters.each do |character| %>
+  <li>Name: <%= character.name %></li>
+  <li>Game: <%= character.video_game.name %></li>
+  <li>Age: <%= character.age %></li>
+  <li>Human?: <%= character.human %></li>
+<% end %>
+</ul>

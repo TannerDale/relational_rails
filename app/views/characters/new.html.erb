@@ -1,0 +1,12 @@
+<h1>Add Character for <%= VideoGame.find(params[:id]).name %></h1>
+
+<%= form_with url: '/characters', method: 'post', local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+  <%= f.label :human %>
+  <%= f.check_box :human %>
+  <%= f.hidden_field :video_game_id, value: params[:id] %>
+  <%= f.submit 'Add Character' %>
+<% end %>
