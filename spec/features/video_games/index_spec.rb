@@ -28,4 +28,16 @@ describe 'video games index page' do
     expect(page).to have_content('Add Game')
     expect(page).to have_selector(:css, "a[href='/video_games/new']")
   end
+
+  it 'can have a link to edit video game' do
+    game = VideoGame.create!(
+      name: 'Witcher 3',
+      campaign_hours: 11,
+      multiplayer: false
+    )
+    visit '/video_games'
+
+    expect(page).to have_content('Edit Game')
+    expect(page).to have_selector(:css, "a[href='/video_games/#{game.id}/edit']")
+  end
 end

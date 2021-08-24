@@ -1,0 +1,11 @@
+<h1><%= @game.name %> Characters</h1>
+
+<ul>
+<% characters.each do |character| %>
+  <li>Name: <%= character.name %></li>
+  <li>Age: <%= character.age %></li>
+  <li>Human?: <%= character.human %></li>
+<% end %>
+</ul>
+<%= link_to 'Sort Alphabetically', "/video_games/#{@game.id}/characters?order=alpha" %>
+<%= link_to 'New Character', "/video_games/#{@game.id}/characters/new" %>

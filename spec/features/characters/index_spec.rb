@@ -30,10 +30,16 @@ describe 'characters index page' do
     expect(page).to have_content("Game: #{char1.video_game.name}")
     expect(page).to have_content("Age: #{char1.age}")
     expect(page).to have_content("Human?: #{char1.human}")
+    expect(page).to have_content('Edit Character')
+    expect(page).to have_selector(:css, "a[href='/characters/#{char1.id}/edit']")
+
     expect(page).to have_content("Name: #{char2.name}")
     expect(page).to have_content("Game: #{char2.video_game.name}")
     expect(page).to have_content("Age: #{char2.age}")
     expect(page).to have_content("Human?: #{char2.human}")
+    expect(page).to have_content('Edit Character')
+    expect(page).to have_selector(:css, "a[href='/characters/#{char2.id}/edit']")
+
     expect(page).not_to have_content("Name: #{char3.name}")
     expect(page).not_to have_content("Age: #{char3.age}")
     expect(page).not_to have_content("Human?: #{char3.human}")

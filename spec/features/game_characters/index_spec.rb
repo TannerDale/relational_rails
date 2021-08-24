@@ -27,8 +27,13 @@ describe 'video game characters' do
     expect(page).to have_content("Age: #{char2.age}")
     expect(page).to have_content("Human?: #{char2.human}")
 
+    expect("Name: #{char1.name}").to appear_before("Name: #{char2.name}", only_text: true)
+
     click_on 'Sort Alphabetically'
 
-    expect("Name: #{char2.name}").to appear_before("Name: #{char1.name}")
+    expect("Name: #{char2.name}").to appear_before("Name: #{char1.name}", only_text: true)
+
+    expect(page).to have_content('New Character')
+    expect(page).to have_selector(:css, "a[href='/video_games/#{game.id}/characters/new']")
   end
 end
