@@ -34,4 +34,11 @@ class VideoGamesController < ApplicationController
 
     redirect_to "/video_games/#{params[:id]}"
   end
+
+  def destroy
+    game = VideoGame.find(params[:id])
+    game.destroy!
+
+    redirect_to '/video_games'
+  end
 end

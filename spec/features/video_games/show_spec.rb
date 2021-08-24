@@ -52,4 +52,33 @@ describe 'video games show page' do
 
     expect(page).to have_content("Characters: 2")
   end
+
+  it 'can delete a video game' do
+    game = VideoGame.create!(
+      name: 'Witcher 3',
+      campaign_hours: 11,
+      multiplayer: false
+    )
+    char1 = Character.create(
+      name: 'Yennefer',
+      age: 107,
+      human: true,
+      video_game_id: game.id
+    )
+    char2 = Character.create(
+      name: 'Geralt',
+      age: 97,
+      human: true,
+      video_game_id: game.id
+    )
+
+    visit "/video_games/#{game.id}"
+
+    click_on 'Delete Video Game'
+
+    expect(page).to have_content('Video Games')
+    expect(page).not_to have_content('Witcher 3')
+    expect(VideoGame.all.count).to eq(0)
+    expect(Character.all.count).to eq(0)
+  end
 end

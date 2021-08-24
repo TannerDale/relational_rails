@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   patch '/video_games/:id', to: 'video_games#update'
   get '/video_games/:id/characters', to: 'game_characters#index'
   post '/video_games', to: 'video_games#create'
+  delete '/video_games/:id', to: 'video_games#destroy'
 
   get '/characters', to: 'characters#index'
   get '/characters/:id/edit', to: 'characters#edit'
