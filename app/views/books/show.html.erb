@@ -1,0 +1,12 @@
+<h1><%= @book.title %></h1>
+
+<ul>
+  <li>Author:
+    <%= @book.author_surname %></li>
+  <li>Nonfiction?:
+    <%= @book.nonfiction %></li>
+  <li>Year Published:
+    <%= @book.year_published %></li>
+  <li>Library:
+    <%= @book.library.name %></li>
+</ul>

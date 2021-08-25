@@ -1,0 +1,15 @@
+<h1><%= @library.name %>
+  Books</h1>
+
+<ul>
+  <% @library.books.each do |book| %>
+    <li>Title:
+      <%= book.title %></li>
+    <li>Author:
+      <%= book.author_surname %></li>
+    <li>Nonfiction?:
+      <%= book.nonfiction %></li>
+    <li>Year Published:
+      <%= book.year_published %></li>
+  <% end %>
+</ul>

@@ -17,4 +17,11 @@ Rails.application.routes.draw do
   post '/characters', to: 'characters#create'
 
   get '/libraries', to: 'libraries#index'
+  get '/libraries/new', to: 'libraries#new'
+  get '/libraries/:id', to: 'libraries#show'
+  get '/libraries/:id/books', to: 'libraries#library_books'
+
+  get '/books', to: 'books#index'
+  get '/books/new', to: 'books#new'
+  get '/books/:id', to: 'books#show'
 end
