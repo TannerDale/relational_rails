@@ -1,7 +1,7 @@
 <h1><%= @game.name %> Characters</h1>
 
 <ul>
-<% characters.each do |character| %>
+<% @game_characters.each do |character| %>
   <li>Name: <%= character.name %></li>
   <li>Age: <%= character.age %></li>
   <li>Human?: <%= character.human %></li>

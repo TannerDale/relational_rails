@@ -29,8 +29,8 @@ RSpec.describe VideoGame, type: :model do
         video_game_id: game.id
       )
 
-      expect(game.characters).to eq([char1, char2])
-      expect(game.ordered_characters).to eq([char2, char1])
+      expect(game.ordered_characters({order: nil})).to eq([char1, char2])
+      expect(game.ordered_characters({order: 'alpha'})).to eq([char2, char1])
     end
   end
 end
