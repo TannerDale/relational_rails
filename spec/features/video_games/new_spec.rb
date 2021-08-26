@@ -10,6 +10,7 @@ describe 'video games new' do
 
     click_button 'Add Game'
 
+    expect(current_path).to eq('/video_games')
     expect(page).to have_content("Witcher 3")
   end
 end

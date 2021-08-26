@@ -1,10 +1,6 @@
 class CharactersController < ApplicationController
   def index
-    if params[:order]
-      @characters = Character.only_humans.order(:name)
-    else
-      @characters = Character.only_humans
-    end
+    @characters = Character.only_humans
   end
 
   def show

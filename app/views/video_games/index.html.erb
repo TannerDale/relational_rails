@@ -2,7 +2,8 @@
 
 <ul>
 <% @games.each do |game| %>
-  <li><%= game.name %>, Created at: <%= game.created_at %></li>
+  <li><%= game.name %>, Created at: <%= game.created_at %> <%= link_to 'Edit Game', "/video_games/#{game.id}/edit" %></li>
+  <li><%= link_to 'Characters', "/video_games/#{game.id}/characters" %></li>
 <% end %>
 </ul>
 <%= link_to 'Add Game', '/video_games/new' %>
