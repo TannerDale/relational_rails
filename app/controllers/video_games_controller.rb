@@ -26,7 +26,6 @@ class VideoGamesController < ApplicationController
 
   def update
     game = VideoGame.find(params[:id])
-
     game.update(
       name: params[:name],
       campaign_hours: params[:campaign_hours],
@@ -36,7 +35,10 @@ class VideoGamesController < ApplicationController
     redirect_to "/video_games/#{params[:id]}"
   end
 
-  def game_characters
-    @game = VideoGame.find(params[:id])
+  def destroy
+    game = VideoGame.find(params[:id])
+    game.destroy!
+
+    redirect_to '/video_games'
   end
 end
