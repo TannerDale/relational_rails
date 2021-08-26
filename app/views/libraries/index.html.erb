@@ -1,0 +1,8 @@
+<h1>Libraries</h1>
+
+<ul>
+  <% @libraries.each do |library| %>
+    <li><%= library.name %>, Created at:
+      <%= library.created_at %></li>
+  <% end %>
+</ul>
