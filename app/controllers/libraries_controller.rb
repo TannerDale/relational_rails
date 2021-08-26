@@ -1,6 +1,6 @@
 class LibrariesController < ApplicationController
   def index
-    @libraries = Library.all
+    @libraries = Library.all.order(:created_at).reverse
   end
 
   def new

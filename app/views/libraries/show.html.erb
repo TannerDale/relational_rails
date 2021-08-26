@@ -5,4 +5,7 @@
     <%= @library.employees %></li>
   <li>Open Weekends?:
     <%= @library.open_weekends %></li>
+  <li>Books:
+    <%= @library.count %></li>
+  <li><%= link_to 'Library Books', "/libraries/#{@library.id}/books" %></li>
 </ul>

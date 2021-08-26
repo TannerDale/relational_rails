@@ -16,7 +16,9 @@ describe 'libraries index page' do
     visit '/libraries'
 
     expect(page).to have_content(lib1.name)
+    expect(page).to have_content(lib1.created_at)
 
     expect(page).to have_content(lib2.name)
+    expect(page).to have_content(lib2.created_at)
   end
 end
