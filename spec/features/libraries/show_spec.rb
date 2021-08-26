@@ -47,20 +47,6 @@ describe 'libraries show page' do
       employees: 15,
       open_weekends: true
     )
-    book1 = Book.create!(
-      library_id: lib1.id,
-      title: 'A Wizard of Earthsea',
-      author_surname: 'Le Guin',
-      nonfiction: false,
-      year_published: 1968
-    )
-    book2 = Book.create!(
-      library_id: lib1.id,
-      title: 'Cosmos',
-      author_surname: 'Sagan',
-      nonfiction: true,
-      year_published: 1980
-    )
 
     visit "/libraries/#{lib1.id}"
 
