@@ -2,10 +2,17 @@
 
 <ul>
 <% @game_characters.each do |character| %>
-  <li>Name: <%= character.name %></li>
+  <li>Name: <%= character.name %> <%= link_to "Edit #{character.name}", "/characters/#{character.id}/edit" %></li>
   <li>Age: <%= character.age %></li>
   <li>Human?: <%= character.human %></li>
+  <li><%= link_to "Delete #{character.name}", "/characters/#{character.id}", method: :delete %></li>
 <% end %>
 </ul>
 <%= link_to 'Sort Alphabetically', "/video_games/#{@game.id}/characters?order=alpha" %>
 <%= link_to 'New Character', "/video_games/#{@game.id}/characters/new" %>
+<%= form_with url: "/video_games/#{@game.id}/characters?filter=age", method: :get, local: true do |f| %>
+  <%= f.hidden_field :game_id, value: @game.id %>
+  <%= f.label 'Minimum Age:' %>
+  <%= f.number_field :minimum_age %>
+  <%= f.submit 'Apply Filter', class: 'btn btn-primary' %>
+<% end %>

@@ -1,6 +1,10 @@
 class VideoGamesController < ApplicationController
   def index
-    @games = VideoGame.all.order(:created_at)
+    if params[:sort]
+      @games = VideoGame.ordered_character_count
+    else
+      @games = VideoGame.ordered_games
+    end
   end
 
   def new
