@@ -2,7 +2,7 @@
 
 <ul>
 <% @game_characters.each do |character| %>
-  <li>Name: <%= character.name %> <%= link_to "Edit #{character.name}", "/characters/#{character.id}/edit" %></li>
+  <li>Name: <%= character.name %> <%= link_to "Edit #{character.name}", "/video_games/#{@game.id}/characters/#{character.id}/edit" %></li>
   <li>Age: <%= character.age %></li>
   <li>Human?: <%= character.human %></li>
   <li><%= link_to "Delete #{character.name}", "/characters/#{character.id}", method: :delete %></li>

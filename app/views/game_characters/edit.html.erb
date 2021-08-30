@@ -1,0 +1,7 @@
+<h1>Edit <%= @character.name %></h1>
+
+<%= render partial: 'form', locals: {
+  path: "/video_games/#{@game.id}/characters/#{@character.id}",
+  method: :patch,
+  button_text: 'Update Character'
+} %>

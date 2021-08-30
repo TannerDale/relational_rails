@@ -1,0 +1,7 @@
+<h1>Edit <%= @game.name %></h1>
+
+<%= render partial: 'form', locals: {
+  path: "/video_games/#{@game.id}/characters",
+  method: :post,
+  button_text: 'Add Character'
+} %>
