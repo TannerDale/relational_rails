@@ -9,6 +9,7 @@ describe 'video games index page' do
     )
     visit '/video_games'
   end
+
   it 'can see all the video game names' do
     game1 = VideoGame.create!(
       name: 'Witcher 3',

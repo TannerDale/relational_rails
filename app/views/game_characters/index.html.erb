@@ -11,8 +11,16 @@
 <%= link_to 'Sort Alphabetically', "/video_games/#{@game.id}/characters?order=alpha" %>
 <%= link_to 'New Character', "/video_games/#{@game.id}/characters/new" %>
 <%= form_with url: "/video_games/#{@game.id}/characters?filter=age", method: :get, local: true do |f| %>
-  <%= f.hidden_field :game_id, value: @game.id %>
   <%= f.label 'Minimum Age:' %>
   <%= f.number_field :minimum_age %>
-  <%= f.submit 'Apply Filter', class: 'btn btn-primary' %>
+  <%= f.submit 'Apply Filter',class: 'btn btn-primary' , id: 'submit-button' %>
 <% end %>
+
+<!-- <script type="text/javascript">
+  let button = document.getElementById("submit-button")
+  let input = document.getElementById("minimum_age")
+
+  input.addEventListener("input", function(e) {
+    button.value = `Only return the records with more than ${e.target.value} of age.`
+  })
+</script> -->

@@ -1,0 +1,9 @@
+<%= form_with model: game, local: true do |f| %>
+  <%= f.label :name %><br/>
+  <%= f.text_field :name %><br/>
+  <%= f.label :campaign_hours %><br/>
+  <%= f.number_field :campaign_hours %><br/>
+  <%= f.label :multiplayer %><br/>
+  <%= f.check_box :multiplayer %><br/>
+  <%= f.submit %>
+<% end %>

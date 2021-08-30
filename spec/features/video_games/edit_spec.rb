@@ -11,10 +11,9 @@ describe 'video games edit' do
     visit "/video_games/#{game.id}/edit"
 
     expect(page).to have_content('Edit Witcher 3')
-
-    fill_in 'name', with: 'Witcher 11'
-    fill_in 'campaign_hours', with: 512
-    click_button 'Update Game'
+    fill_in 'Name', with: 'Witcher 11'
+    fill_in 'Campaign hours', with: 512
+    click_button 'Update Video game'
 
     expect(page).to have_content("Witcher 11")
     expect(page).to have_content("Campaign hours: 512")

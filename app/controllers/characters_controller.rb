@@ -12,12 +12,7 @@ class CharactersController < ApplicationController
   end
 
   def create
-    Character.create(
-      name: params[:name],
-      age: params[:age],
-      human: params[:human],
-      video_game_id: params[:video_game_id]
-    )
+    Character.create(character_params)
 
     redirect_to "/video_games/#{params[:video_game_id]}/characters"
   end
@@ -28,12 +23,7 @@ class CharactersController < ApplicationController
 
   def update
     character = Character.find(params[:id])
-    character.update(
-      name: params[:name],
-      age: params[:age],
-      human: params[:human],
-      video_game_id: character.video_game_id
-    )
+    character.update(character_params)
 
     redirect_to "/characters/#{character.id}"
   end
@@ -53,5 +43,9 @@ class CharactersController < ApplicationController
     elsif params[:loose_name]
       Character.loose_search(params[:loose_name])
     end
+  end
+
+  def character_params
+    params.permit(:name, :age, :human, :video_game_id)
   end
 end

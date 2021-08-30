@@ -8,14 +8,11 @@ class VideoGamesController < ApplicationController
   end
 
   def new
+    @game = VideoGame.new
   end
 
   def create
-    VideoGame.create!(
-      name: params[:name],
-      campaign_hours: params[:campaign_hours],
-      multiplayer: params[:multiplayer]
-    )
+    VideoGame.create!(video_game_params)
 
     redirect_to '/video_games'
   end
@@ -30,13 +27,9 @@ class VideoGamesController < ApplicationController
 
   def update
     game = VideoGame.find(params[:id])
-    game.update(
-      name: params[:name],
-      campaign_hours: params[:campaign_hours],
-      multiplayer: params[:multiplayer]
-    )
+    game.update(video_game_params)
 
-    redirect_to "/video_games/#{params[:id]}"
+    redirect_to "/video_games/#{game.id}"
   end
 
   def destroy
@@ -44,5 +37,11 @@ class VideoGamesController < ApplicationController
     game.destroy!
 
     redirect_to '/video_games'
+  end
+
+  private
+
+  def video_game_params
+    params.require(:video_game).permit(:name, :campaign_hours, :multiplayer)
   end
 end

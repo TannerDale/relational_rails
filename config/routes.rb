@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/video_games/new', to: 'video_games#new'
   get '/video_games/:id', to: 'video_games#show'
   get '/video_games/:id/edit', to: 'video_games#edit'
-  patch '/video_games/:id', to: 'video_games#update'
+  patch '/video_games/:id', to: 'video_games#update', as: 'video_game'
   post '/video_games', to: 'video_games#create'
   delete '/video_games/:id', to: 'video_games#destroy'
 
