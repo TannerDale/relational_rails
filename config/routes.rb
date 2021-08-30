@@ -10,17 +10,14 @@ Rails.application.routes.draw do
   delete '/video_games/:id', to: 'video_games#destroy'
 
   get '/video_games/:id/characters', to: 'game_characters#index'
-  patch '/video_games/:id/characters', to: 'game_characters#update'
+  get '/video_games/:id/characters/new', to: 'game_characters#new'
+  post '/video_games/:video_game_id/characters', to: 'game_characters#create'
+  patch '/video_games/:video_game_id/characters/:id', to: 'game_characters#update'
+  get '/video_games/:video_game_id/characters/:id/edit', to: 'game_characters#edit'
 
   get '/characters', to: 'characters#index'
-  get '/characters/:id/edit', to: 'characters#edit'
-  patch '/characters/:id', to: 'characters#update'
   get '/characters/:id', to: 'characters#show'
   delete '/characters/:id', to: 'characters#destroy'
-
-  get '/video_games/:id/characters/new', to: 'characters#new'
-
-  post '/characters', to: 'characters#create'
 
   get '/libraries', to: 'libraries#index'
   get '/libraries/new', to: 'libraries#new'

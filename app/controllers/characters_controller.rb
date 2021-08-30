@@ -8,26 +8,6 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
   end
 
-  def new
-  end
-
-  def create
-    Character.create(character_params)
-
-    redirect_to "/video_games/#{params[:video_game_id]}/characters"
-  end
-
-  def edit
-    @character = Character.find(params[:id])
-  end
-
-  def update
-    character = Character.find(params[:id])
-    character.update(character_params)
-
-    redirect_to "/characters/#{character.id}"
-  end
-
   def destroy
     character = Character.find(params[:id])
     character.destroy!
@@ -43,9 +23,5 @@ class CharactersController < ApplicationController
     elsif params[:loose_name]
       Character.loose_search(params[:loose_name])
     end
-  end
-
-  def character_params
-    params.permit(:name, :age, :human, :video_game_id)
   end
 end
