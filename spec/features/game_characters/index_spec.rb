@@ -41,12 +41,12 @@ describe 'video game characters' do
 
   it 'has a link to edit the characters' do
     [@char1, @char2].each do |char|
-      expect(page).to have_selector(:css, "a[href='/characters/#{char.id}/edit']")
+      expect(page).to have_selector(:css, "a[href='/video_games/#{@game.id}/characters/#{@char1.id}/edit']")
     end
 
     click_on "Edit #{@char1.name}"
 
-    expect(current_path).to eq("/characters/#{@char1.id}/edit")
+    expect(current_path).to eq("/video_games/#{@game.id}/characters/#{@char1.id}/edit")
   end
 
   it 'has a form to select a threshhold for the character age' do

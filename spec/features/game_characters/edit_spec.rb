@@ -14,7 +14,7 @@ describe 'character update' do
       video_game_id: game.id
     )
 
-    visit "/characters/#{char.id}/edit"
+    visit "/video_games/#{game.id}/characters/#{char.id}/edit"
 
     fill_in 'name', with: 'Yen'
     fill_in 'age', with: 28
