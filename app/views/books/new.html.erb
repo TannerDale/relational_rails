@@ -1,0 +1,14 @@
+<h1>Add Book for <%= Library.find(params[:id]).name %></h1>
+
+<%= form_with url: '/books', method: 'post', local: true do |f| %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %><br><br>
+  <%= f.label :author_surname %><br>
+  <%= f.text_field :author_surname %><br><br>
+  <%= f.label :nonfiction %><br>
+  <%= f.check_box :nonfiction %><br><br>
+  <%= f.label :year_published %><br>
+  <%= f.number_field :year_published %><br><br>
+  <%= f.hidden_field :library_id, value: params[:id] %>
+  <%= f.submit 'Add Book' %>
+<% end %>

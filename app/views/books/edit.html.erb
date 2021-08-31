@@ -1,0 +1,13 @@
+<h1>Edit <%= @book.title %></h1>
+<%= form_with url: "/books/#{@book.id}", method: 'patch', local: true do |f| %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title, value: @book.title %><br><br>
+  <%= f.label :author_surname %><br>
+  <%= f.text_field :author_surname, value: @book.author_surname  %><br><br>
+  <%= f.label :nonfiction %><br>
+  <%= f.check_box :nonfiction, value: @book.nonfiction  %><br><br>
+  <%= f.label :year_published %><br>
+  <%= f.number_field :year_published, value: @book.year_published  %><br><br>
+  <%= f.hidden_field :library_id, value: @book.library_id %>
+  <%= f.submit 'Update Book' %>
+<% end %>
