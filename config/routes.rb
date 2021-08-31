@@ -28,4 +28,8 @@ Rails.application.routes.draw do
   get '/books', to: 'books#index'
   get '/books/new', to: 'books#new'
   get '/books/:id', to: 'books#show'
+  get '/libraries/:id/books/new', to: 'books#new'
+  post '/books', to: 'books#create'
+  get '/books/:id/edit', to: 'books#edit'
+  patch '/books/:id', to: 'books#update'
 end

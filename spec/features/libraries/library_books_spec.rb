@@ -1,37 +1,44 @@
 require 'rails_helper'
 
 describe 'library books' do
-  it 'has books and info' do
-    lib1 = Library.create!(
+  before(:each) do
+    @lib1 = Library.create!(
       name: 'Mesa Public Library',
       employees: 15,
       open_weekends: true
     )
-    book1 = Book.create!(
-      library_id: lib1.id,
-      title: "A Wizard of Earthsea",
-      author_surname: "Le Guin",
+    @book1 = Book.create!(
+      library_id: @lib1.id,
+      title: 'A Wizard of Earthsea',
+      author_surname: 'Le Guin',
       nonfiction: false,
       year_published: 1968
     )
-    book2 = Book.create!(
-      library_id: lib1.id,
-      title: "Cosmos",
-      author_surname: "Sagan",
+    @book2 = Book.create!(
+      library_id: @lib1.id,
+      title: 'Cosmos',
+      author_surname: 'Sagan',
       nonfiction: true,
       year_published: 1980
     )
 
-    visit "/libraries/#{lib1.id}/books"
+    visit "/libraries/#{@lib1.id}/books"
+  end
 
-    expect(page).to have_content("#{lib1.name} Books")
-    expect(page).to have_content("Title: #{book1.title}")
-    expect(page).to have_content("Author: #{book1.author_surname}")
-    expect(page).to have_content("Nonfiction?: #{book1.nonfiction}")
-    expect(page).to have_content("Year Published: #{book1.year_published}")
-    expect(page).to have_content("Title: #{book2.title}")
-    expect(page).to have_content("Author: #{book2.author_surname}")
-    expect(page).to have_content("Nonfiction?: #{book2.nonfiction}")
-    expect(page).to have_content("Year Published: #{book2.year_published}")
+  it 'has books and info' do
+    expect(page).to have_content("#{@lib1.name} Books")
+    expect(page).to have_content("Title: #{@book1.title}")
+    expect(page).to have_content("Author: #{@book1.author_surname}")
+    expect(page).to have_content("Nonfiction?: #{@book1.nonfiction}")
+    expect(page).to have_content("Year Published: #{@book1.year_published}")
+    expect(page).to have_content("Title: #{@book2.title}")
+    expect(page).to have_content("Author: #{@book2.author_surname}")
+    expect(page).to have_content("Nonfiction?: #{@book2.nonfiction}")
+    expect(page).to have_content("Year Published: #{@book2.year_published}")
+  end
+
+  it 'can create new book' do
+    expect(page).to have_content('New Book')
+    expect(page).to have_selector(:css, "a[href='/libraries/#{@lib1.id}/books/new']")
   end
 end

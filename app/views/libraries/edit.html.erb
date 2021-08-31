@@ -1,11 +1,11 @@
 <h1>Edit <%= @library.name %></h1>
 
 <%= form_with url: "/libraries/#{@library.id}", method: :patch, local: true do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, value: @library.name %>
-  <%= f.label :employees %>
-  <%= f.number_field :employees, value: @library.employees %>
-  <%= f.label :open_weekends %>
-  <%= f.check_box :open_weekends, value: @library.open_weekends %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name, value: @library.name %><br><br>
+  <%= f.label :employees %><br>
+  <%= f.number_field :employees, value: @library.employees %><br><br>
+  <%= f.label :open_weekends %><br>
+  <%= f.check_box :open_weekends, value: @library.open_weekends %><br><br>
   <%= f.submit 'Update' %>
 <% end %>
