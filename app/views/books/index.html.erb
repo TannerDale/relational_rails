@@ -12,6 +12,8 @@
       <%= book.year_published %></li>
     <li>Library:
       <%= book.library.name %></li>
-    <br>
+      <%= link_to 'Info', "/books/#{book.id}" %> |
+      <%= link_to 'Edit Book', "/books/#{book.id}/edit" %>
+    <br><br>
   <% end %>
 </ul>

@@ -3,6 +3,10 @@
 <ul>
   <% @libraries.each do |library| %>
     <li><%= library.name %>, Created at:
-      <%= library.created_at %></li>
+      <%= library.created_at %>
+      <%= link_to 'Info', "/libraries/#{library.id}" %> | 
+      <%= link_to 'Books', "/libraries/#{library.id}/books" %> |
+      <%= link_to 'Edit Library', "/libraries/#{library.id}/edit" %></li>
   <% end %>
 </ul>
+<%= link_to 'New Library', '/libraries/new' %>

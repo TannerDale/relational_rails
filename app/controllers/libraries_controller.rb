@@ -3,8 +3,7 @@ class LibrariesController < ApplicationController
     @libraries = Library.all.order(:created_at).reverse
   end
 
-  def new
-  end
+  def new; end
 
   def show
     @library = Library.find(params[:id])
@@ -12,5 +11,30 @@ class LibrariesController < ApplicationController
 
   def library_books
     @library = Library.find(params[:id])
+  end
+
+  def create
+    Library.create!(
+      name: params[:name],
+      employees: params[:employees],
+      open_weekends: params[:open_weekends]
+    )
+
+    redirect_to '/libraries'
+  end
+
+  def edit
+    @library = Library.find(params[:id])
+  end
+
+  def update
+    library = Library.find(params[:id])
+    library.update(
+      name: params[:name],
+      employees: params[:employees],
+      open_weekends: params[:open_weekends]
+    )
+
+    redirect_to "/libraries/#{params[:id]}"
   end
 end
