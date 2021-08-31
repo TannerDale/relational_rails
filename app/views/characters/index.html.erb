@@ -6,5 +6,16 @@
   <li>Game: <%= character.video_game.name %></li>
   <li>Age: <%= character.age %></li>
   <li>Human?: <%= character.human %></li>
+  <li><%= link_to "Delete #{character.name}", "/characters/#{character.id}", method: :delete %></li>
 <% end %>
 </ul>
+<%= form_with url: '/characters', method: :get, local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :exact_name %>
+  <%= f.submit 'Find Character', class: 'btn btn-primary' %>
+<% end %>
+<%= form_with url: '/characters', method: :get, local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :loose_name %>
+  <%= f.submit 'Loose Search Character', class: 'btn btn-primary' %>
+<% end %>

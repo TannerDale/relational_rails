@@ -5,6 +5,10 @@ class VideoGame < ApplicationRecord
     characters.length
   end
 
+  scope :ordered_character_count, -> {
+    sort_by(&:character_count).reverse
+  }
+
   def ordered_characters(params)
     if params[:order]
       characters.order(:name)
@@ -12,4 +16,8 @@ class VideoGame < ApplicationRecord
       characters
     end
   end
+
+  scope :ordered_games, -> {
+    order(:created_at)
+  }
 end

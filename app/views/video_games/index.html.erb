@@ -4,6 +4,8 @@
 <% @games.each do |game| %>
   <li><%= game.name %>, Created at: <%= game.created_at %> <%= link_to 'Edit Game', "/video_games/#{game.id}/edit" %></li>
   <li><%= link_to 'Characters', "/video_games/#{game.id}/characters" %></li>
+  <li><%= link_to 'Delete Game', "/video_games/#{game.id}", method: :delete %></li>
 <% end %>
 </ul>
+<%= link_to 'Order by Character Count', "/video_games?sort=count" %>
 <%= link_to 'Add Game', '/video_games/new' %>
