@@ -21,4 +21,11 @@ describe 'libraries index page' do
     expect(page).to have_content(lib2.name)
     expect(page).to have_content(lib2.created_at)
   end
+
+  it 'has link to create new lib' do
+    visit '/libraries'
+
+    expect(page).to have_content('New Library')
+    expect(page).to have_selector(:css, "a[href='/libraries/new']")
+  end
 end
