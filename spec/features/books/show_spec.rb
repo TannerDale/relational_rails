@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'books show page' do
-  it 'shows attributes' do
+  it 'has attributes' do
     lib1 = Library.create!(
       name: 'Mesa Public Library',
       employees: 15,

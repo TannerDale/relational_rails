@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'books index page' do
-  it 'shows books and information' do
+  it 'has books and information' do
     lib1 = Library.create!(
       name: 'Mesa Public Library',
       employees: 15,
