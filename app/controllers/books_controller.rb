@@ -3,8 +3,7 @@ class BooksController < ApplicationController
     @books = Book.all
   end
 
-  def new
-  end
+  def new; end
 
   def show
     @book = Book.find(params[:id])
@@ -37,5 +36,12 @@ class BooksController < ApplicationController
     )
 
     redirect_to "/books/#{book.id}"
+  end
+
+  def destroy
+    book = Book.find(params[:id])
+    book.destroy!
+
+    redirect_to '/books'
   end
 end
