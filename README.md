@@ -272,5 +272,5 @@ Chloe's Completion Checklist
 - [x] 19 Parent Delete
 - [ ] 20 Child Delete
 - [ ] 21 Display Records Over a Given Threshold
-- [ ] 22 Parent Delete From Parent Index Page
+- [x] 22 Parent Delete From Parent Index Page
 - [ ] 23 Child Delete From Childs Index Page

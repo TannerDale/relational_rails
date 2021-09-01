@@ -4,9 +4,11 @@
   <% @libraries.each do |library| %>
     <li><%= library.name %>, Created at:
       <%= library.created_at %>
-      <%= link_to 'Info', "/libraries/#{library.id}" %> | 
+      <%= link_to 'Info', "/libraries/#{library.id}" %> |
       <%= link_to 'Books', "/libraries/#{library.id}/books" %> |
-      <%= link_to 'Edit Library', "/libraries/#{library.id}/edit" %></li>
+      <%= link_to 'Edit Library', "/libraries/#{library.id}/edit" %> |
+    <%= link_to 'Delete Library', "/libraries/#{library.id}", method: :delete %><br>
+  </li>
   <% end %>
 </ul>
 <%= link_to 'New Library', '/libraries/new' %>
