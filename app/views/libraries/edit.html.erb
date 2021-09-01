@@ -10,3 +10,5 @@
 <%= f.check_box :open_weekends, value: @library.open_weekends %><br><br>
 <%= f.submit 'Update' %>
 <% end %>
+<br>
+<%= link_to 'Return to Library', "/libraries/#{@library.id}" %>

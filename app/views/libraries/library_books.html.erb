@@ -17,6 +17,12 @@
     <br><br>
   <% end %>
 </ul>
+<%= form_with url: "/libraries/#{@library.id}/books?filter=year", method: :get, local: true do |f| %>
+<%= f.label 'Earliest Year Published:' %>
+<%= f.number_field :earliest_year_published %>
+<%= f.submit 'Apply',class: 'btn btn-secondary' , id: 'submit-button' %>
+<% end %>
+
 <%= link_to 'Sort Alphabetically by Title', "/libraries/#{@library.id}/books?order=alpha" %>
 <br>
 <%= link_to 'New Book', "/libraries/#{@library.id}/books/new" %>

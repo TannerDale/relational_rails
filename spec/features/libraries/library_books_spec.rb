@@ -61,4 +61,14 @@ describe 'library books' do
     expect('A Wizard of Earthsea').to appear_before('Baseball')
     expect('Baseball').to appear_before('Cosmos')
   end
+
+  it 'has publishing year filtering functionality' do
+    fill_in 'earliest_year_published', with: 1982
+
+    click_button 'Apply'
+
+    expect(page).to have_content('Baseball')
+    expect(page).not_to have_content('Cosmos')
+    expect(page).not_to have_content('A Wizard of Earthsea')
+  end
 end

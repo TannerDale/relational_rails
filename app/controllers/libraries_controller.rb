@@ -1,6 +1,6 @@
 class LibrariesController < ApplicationController
   def index
-    @libraries = Library.all.order(:created_at).reverse
+    @libraries = Library.order_created
   end
 
   def new; end
@@ -12,9 +12,9 @@ class LibrariesController < ApplicationController
   def library_books
     @library = Library.find(params[:id])
     @books = @library.books
-    if params[:order]
-      @books = @library.books.order(:title)
-    end
+    @books = @library.order_books if params[:order]
+
+    @books = @books.over_year(params[:earliest_year_published]) if params[:earliest_year_published]
   end
 
   def create
