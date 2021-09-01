@@ -56,7 +56,7 @@ describe 'video games index page' do
 
   it 'has game ordered by character count' do
     game2 = VideoGame.create!(
-      name: 'Far Cry 5',
+      name: 'Zar Cry 5',
       campaign_hours: 2,
       multiplayer: true
     )

@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get '/characters', to: 'characters#index'
   get '/characters/:id', to: 'characters#show'
+  get '/characters/:id/edit', to: 'game_characters#edit'
+  patch '/characters/:id', to: 'game_characters#update'
   delete '/characters/:id', to: 'characters#destroy'
 
   get '/libraries', to: 'libraries#index'

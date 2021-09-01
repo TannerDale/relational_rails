@@ -17,8 +17,9 @@ class GameCharactersController < ApplicationController
   end
 
   def edit
-    @game = VideoGame.find(params[:video_game_id])
     @character = Character.find(params[:id])
+    game_id = params[:video_game_id] || @character.video_game_id
+    @game = VideoGame.find(game_id)
   end
 
   def update

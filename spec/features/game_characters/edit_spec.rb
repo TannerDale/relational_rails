@@ -16,7 +16,6 @@ describe 'character update' do
 
     visit "/video_games/#{game.id}/characters/#{char.id}/edit"
 
-    fill_in 'name', with: 'Yen'
     fill_in 'age', with: 28
     check 'human'
 

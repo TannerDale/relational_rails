@@ -1,8 +1,8 @@
 <%= form_with url: path, method: method do |f| %>
   <%= f.label :name %><br/>
-  <%= f.text_field :name %><br/>
+  <%= f.text_field :name, value: @character&.name %><br/>
   <%= f.label :age %><br/>
-  <%= f.number_field :age %><br/>
+  <%= f.number_field :age, value: @character&.age %><br/>
   <%= f.label :human %><br/>
   <%= f.check_box :human %><br/>
   <%= f.hidden_field :video_game_id, value: params[:id] %><br/>

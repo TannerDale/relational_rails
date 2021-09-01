@@ -2,7 +2,7 @@
 
 <ul>
 <% @games.each do |game| %>
-  <li><%= game.name %>, Created at: <%= game.created_at %> <%= link_to 'Edit Game', "/video_games/#{game.id}/edit" %></li>
+  <li><%= link_to game.name, "/video_games/#{game.id}" %>, Created at: <%= game.created_at %> <%= link_to 'Edit Game', "/video_games/#{game.id}/edit" %></li>
   <li><%= link_to 'Characters', "/video_games/#{game.id}/characters" %></li>
   <li><%= link_to 'Delete Game', "/video_games/#{game.id}", method: :delete %></li>
 <% end %>
