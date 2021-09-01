@@ -6,5 +6,5 @@
   <li>Characters: <%= @game.character_count %></li>
   <li><%= link_to 'Game Characters', "/video_games/#{@game.id}/characters" %></li>
 </ul>
-
+<%= link_to 'Edit Game', "/video_games/#{@game.id}/edit" %>
 <%= link_to 'Delete Video Game', "/video_games/#{@game.id}", method: :delete %>

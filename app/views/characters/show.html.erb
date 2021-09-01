@@ -2,4 +2,5 @@
 
 <p>Age: <%= @character.age %></p>
 <p>Human?: <%= @character.human %></p>
+<%= link_to 'Edit Character', "/characters/#{@character.id}/edit" %>
 <%= link_to 'Delete Character', "/characters/#{@character.id}", method: :delete %>
