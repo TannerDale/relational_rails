@@ -11,10 +11,11 @@
       <%= book.nonfiction %></li>
     <li>Year Published:
       <%= book.year_published %></li>
-    <br>
+    <%= link_to 'Edit Book', "/books/#{book.id}/edit" %> |
+    <%= link_to 'Delete Book', "/books/#{book.id}", method: :delete %>
+    <br><br>
   <% end %>
 </ul>
-<br>
 <%= link_to 'New Book', "/libraries/#{@library.id}/books/new" %>
 <br>
 <%= link_to 'Return to Library', "/libraries/#{@library.id}" %>
