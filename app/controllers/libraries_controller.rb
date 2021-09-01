@@ -11,6 +11,10 @@ class LibrariesController < ApplicationController
 
   def library_books
     @library = Library.find(params[:id])
+    @books = @library.books
+    if params[:order]
+      @books = @library.books.order(:title)
+    end
   end
 
   def create

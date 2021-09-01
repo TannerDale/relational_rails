@@ -25,13 +25,12 @@ describe 'books index page' do
     visit '/books'
   end
 
-  it 'has books and information' do
+  it 'has books and information, if nonfiction is true' do
     expect(page).to have_content('Books')
-    expect(page).to have_content("Title: #{@book1.title}")
-    expect(page).to have_content("Author: #{@book1.author_surname}")
-    expect(page).to have_content("Nonfiction?: #{@book1.nonfiction}")
-    expect(page).to have_content("Year Published: #{@book1.year_published}")
-    expect(page).to have_content("Library: #{@book1.library.name}")
+    expect(page).not_to have_content("Title: #{@book1.title}")
+    expect(page).not_to have_content("Author: #{@book1.author_surname}")
+    expect(page).not_to have_content("Nonfiction?: #{@book1.nonfiction}")
+    expect(page).not_to have_content("Year Published: #{@book1.year_published}")
     expect(page).to have_content("Title: #{@book2.title}")
     expect(page).to have_content("Author: #{@book2.author_surname}")
     expect(page).to have_content("Nonfiction?: #{@book2.nonfiction}")

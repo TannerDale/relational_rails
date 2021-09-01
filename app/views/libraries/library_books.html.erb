@@ -2,7 +2,7 @@
   Books</h1>
 
 <ul>
-  <% @library.books.each do |book| %>
+  <% @books.each do |book| %>
     <li>Title:
       <%= book.title %></li>
     <li>Author:
@@ -17,6 +17,8 @@
     <br><br>
   <% end %>
 </ul>
+<%= link_to 'Sort Alphabetically by Title', "/libraries/#{@library.id}/books?order=alpha" %>
+<br>
 <%= link_to 'New Book', "/libraries/#{@library.id}/books/new" %>
 <br>
 <%= link_to 'Return to Library', "/libraries/#{@library.id}" %>

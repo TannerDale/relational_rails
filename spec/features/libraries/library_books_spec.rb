@@ -21,6 +21,13 @@ describe 'library books' do
       nonfiction: true,
       year_published: 1980
     )
+    @book3 = Book.create!(
+      library_id: @lib1.id,
+      title: 'Baseball',
+      author_surname: 'Author',
+      nonfiction: true,
+      year_published: 1999
+    )
 
     visit "/libraries/#{@lib1.id}/books"
   end
@@ -46,5 +53,12 @@ describe 'library books' do
     click_on('Delete Book', match: :first)
 
     expect(page).to_not have_content('A Wizard of Earthsea')
+  end
+
+  it 'has alphabetize functionality' do
+    click_on 'Sort Alphabetically by Title'
+
+    expect('A Wizard of Earthsea').to appear_before('Baseball')
+    expect('Baseball').to appear_before('Cosmos')
   end
 end

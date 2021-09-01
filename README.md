@@ -265,20 +265,8 @@ This functionality should be separate from your exact match functionality.
 Chloe's Completion Checklist
 
 - [x] Stories 1-14
-- [ ] 15 Child Index only shows `true` Records
-   * As a visitor
-When I visit the child index
-Then I only see records where the boolean column is `true`
-
-
-- [ ] 16 Sort Parent's Children in Alphabetical Order by name
-   * As a visitor
-When I visit the Parent's children Index Page
-Then I see a link to sort children in alphabetical order
-When I click on the link
-I'm taken back to the Parent's children Index Page where I see all of the parent's children in alphabetical order
-
-
+- [x] 15 Child Index only shows `true` Records
+- [x] 16 Sort Parent's Children in Alphabetical Order by name
 - [x] 17 Parent Update From Parent Index Page
 - [x] 18 Child Update From Childs Index Page
 - [x] 19 Parent Delete
