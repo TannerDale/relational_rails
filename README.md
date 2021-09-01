@@ -258,3 +258,19 @@ When I type in a keyword that is an partial match of one or more of my records a
 Then I only see records that are an partial match returned on the page
 
 This functionality should be separate from your exact match functionality.
+
+
+---
+
+Chloe's Completion Checklist
+
+- [x] Stories 1-14
+- [ ] 15 Child Index only shows `true` Records
+- [ ] 16 Sort Parent's Children in Alphabetical Order by name
+- [x] 17 Parent Update From Parent Index Page
+- [x] 18 Child Update From Childs Index Page
+- [ ] 19 Parent Delete
+- [ ] 20 Child Delete
+- [ ] 21 Display Records Over a Given Threshold
+- [ ] 22 Parent Delete From Parent Index Page
+- [ ] 23 Child Delete From Childs Index Page
