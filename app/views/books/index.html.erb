@@ -2,6 +2,7 @@
 
 <ul>
   <% @books.each do |book| %>
+  <% if book.nonfiction == true %>
     <li>Title:
       <%= book.title %></li>
     <li>Author:
@@ -18,5 +19,6 @@
     |
     <%= link_to 'Delete Book', "/books/#{book.id}", method: :delete %>
     <br><br>
+  <% end %>
   <% end %>
 </ul>
