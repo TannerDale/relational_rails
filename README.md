@@ -266,11 +266,30 @@ Chloe's Completion Checklist
 
 - [x] Stories 1-14
 - [ ] 15 Child Index only shows `true` Records
+   * As a visitor
+When I visit the child index
+Then I only see records where the boolean column is `true`
+
+
 - [ ] 16 Sort Parent's Children in Alphabetical Order by name
+   * As a visitor
+When I visit the Parent's children Index Page
+Then I see a link to sort children in alphabetical order
+When I click on the link
+I'm taken back to the Parent's children Index Page where I see all of the parent's children in alphabetical order
+
+
 - [x] 17 Parent Update From Parent Index Page
 - [x] 18 Child Update From Childs Index Page
 - [x] 19 Parent Delete
 - [x] 20 Child Delete
 - [ ] 21 Display Records Over a Given Threshold
+ * As a visitor
+When I visit the Parent's children Index Page
+I see a form that allows me to input a number value
+When I input a number value and click the submit button that reads 'Only return records with more than `number` of `column_name`'
+Then I am brought back to the current index page with only the records that meet that threshold shown.
+
+
 - [x] 22 Parent Delete From Parent Index Page
 - [x] 23 Child Delete From Childs Index Page
