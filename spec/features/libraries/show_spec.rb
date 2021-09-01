@@ -46,7 +46,7 @@ describe 'libraries show page' do
   it 'has delete functionality' do
     visit "/libraries/#{@lib1.id}"
 
-    click_on "Delete Library"
+    click_on 'Delete Library'
 
     expect(page).not_to have_content('Mesa Public Library')
   end

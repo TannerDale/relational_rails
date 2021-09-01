@@ -3,8 +3,7 @@ class BooksController < ApplicationController
     @books = Book.all
   end
 
-  def new
-  end
+  def new; end
 
   def show
     @book = Book.find(params[:id])

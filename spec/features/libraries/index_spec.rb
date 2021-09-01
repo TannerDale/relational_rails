@@ -17,7 +17,6 @@ describe 'libraries index page' do
   end
 
   it 'shows all library names' do
-
     expect(page).to have_content(@lib1.name)
     expect(page).to have_content(@lib1.created_at)
 
