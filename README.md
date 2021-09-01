@@ -269,7 +269,7 @@ Chloe's Completion Checklist
 - [ ] 16 Sort Parent's Children in Alphabetical Order by name
 - [x] 17 Parent Update From Parent Index Page
 - [x] 18 Child Update From Childs Index Page
-- [ ] 19 Parent Delete
+- [x] 19 Parent Delete
 - [ ] 20 Child Delete
 - [ ] 21 Display Records Over a Given Threshold
 - [ ] 22 Parent Delete From Parent Index Page
