@@ -37,8 +37,14 @@ describe 'library books' do
     expect(page).to have_content("Year Published: #{@book2.year_published}")
   end
 
-  it 'can create new book' do
+  it 'has create new book functionality' do
     expect(page).to have_content('New Book')
     expect(page).to have_selector(:css, "a[href='/libraries/#{@lib1.id}/books/new']")
+  end
+
+  it 'has delete functionality' do
+    click_on('Delete Book', match: :first)
+
+    expect(page).to_not have_content('A Wizard of Earthsea')
   end
 end

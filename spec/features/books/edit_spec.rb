@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'edit book' do
-  it 'allows for updates' do
+  it 'has update functionality' do
     lib1 = Library.create!(
       name: 'Mesa Public Library',
       employees: 15,
@@ -9,8 +9,8 @@ describe 'edit book' do
     )
     book1 = Book.create!(
       library_id: lib1.id,
-      title: "A Wizard of Earthsea",
-      author_surname: "Le Guin",
+      title: 'A Wizard of Earthsea',
+      author_surname: 'Le Guin',
       nonfiction: false,
       year_published: 1968
     )

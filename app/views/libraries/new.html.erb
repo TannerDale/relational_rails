@@ -1,11 +1,11 @@
 <h1>New Library</h1>
 
 <%= form_with url: '/libraries', method: :post, local: true do |f| %>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br><br>
-  <%= f.label :employees %><br>
-  <%= f.number_field :employees %><br><br>
-  <%= f.label :open_weekends %><br>
-  <%= f.check_box :open_weekends %><br><br>
-  <%= f.submit 'Create Library' %>
+<%= f.label :name %><br>
+<%= f.text_field :name %><br><br>
+<%= f.label :employees %><br>
+<%= f.number_field :employees %><br><br>
+<%= f.label :open_weekends %><br>
+<%= f.check_box :open_weekends %><br><br>
+<%= f.submit 'Create Library' %>
 <% end %>
